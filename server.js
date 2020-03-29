@@ -7,16 +7,7 @@ app.get('/', function (req,res) {
 });
 */
 
-var middleware = {
-	requireAuthentication : function(req, res, next){
-		console.log("Özel route");
-		next();
-	},
-	logger : function(req, res, next){
-		console.log("Özel route logger");
-		next();
-	},
-}
+var middleware = require('./middleware');
 
 //Genel tanımlama
 app.use(middleware.logger);
